@@ -22,13 +22,37 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  locale: {
+    firstDayOfWeek: 1,
+    weekdays: {
+      shorthand: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+      longhand: [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ],
+    },
+  },
   onClose(selectedDates) {
     const msDefaultDate = options.defaultDate.getTime();
     const msselectedDates = selectedDates[0].getTime();
     if (msDefaultDate > selectedDates[0].getTime()) {
       iziToast.show({
-        title: 'Hey',
+        title: 'Hey!',
         message: 'Please choose a date in the future',
+        iconUrl: '../img/x.svg',
+        position: 'center',
+        backgroundColor: '#ef4040',
+        titleColor: '#fff',
+        messageColor: '#fff',
+        iconColor: '#fff',
+        progressBarColor: '#b51b1b',
+        closeColor: '#fff',
+        class: 'iziToast-dark',
       });
       btn.disabled = true;
       btn.classList.remove('btn-active');
@@ -43,11 +67,6 @@ const options = {
     setTimeout(() => {
       document.querySelectorAll('.flatpickr-day.selected').forEach(day => {
         day.classList.remove('selected');
-      });
-    }, 0);
-    setTimeout(() => {
-      document.querySelectorAll('.flatpickr-weekday').forEach(day => {
-        day.textContent = day.textContent.trim().slice(0, 2);
       });
     }, 0);
   },
@@ -99,7 +118,7 @@ function start() {
 
     if (time <= 0) {
       clearInterval(countdownInterval);
-      btn.disabled = false;
+
       input.disabled = false;
       input.classList.remove('input-disabled');
       days.textContent = '00';
