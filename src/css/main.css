@@ -1,0 +1,29 @@
+
+
+.home {
+height: 100vh;
+}
+
+.home-title {
+text-transform: uppercase;
+color: blue;
+}
+
+.home-list {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+
+}
+.home-item {
+    width: 200px;
+    height: 200px;
+    background-color: rebeccapurple;
+}
+
+.home-link {
+    display: block;
+    min-width: 100%;
+   min-height: 100%;
+}
