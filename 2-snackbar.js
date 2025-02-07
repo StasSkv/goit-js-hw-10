@@ -1,9 +1,8 @@
-import"./assets/modulepreload-polyfill-B5Qt9EMX.js";/* empty css                      */import"./assets/vendor-BbbuE1sJ.js";const s=document.querySelector("input"),e=s.closest("label");s.classList.add("input-delay");e.classList.add("label-delay");s.insertAdjacentHTML("afterend",`<div class="container">
-  <svg class="svg" width="16" height="16">
+import"./assets/modulepreload-polyfill-B5Qt9EMX.js";/* empty css                      */import{i as t}from"./assets/vendor-BbbuE1sJ.js";const n=document.querySelector("main");n.insertAdjacentHTML("beforebegin",'<a href="./index.html" class="link-back-to-home">go home</a>');const e=document.querySelector("input"),r=e.closest("label");e.classList.add("input-delay");r.classList.add("label-delay");r.insertAdjacentHTML("beforeend",`<div class="container-svg">
+  <svg class="svg-plus" width="16" height="16">
     <use href="./img/plus.svg#plus"></use>
   </svg>
-  <svg class="svg" width="16" height="16">
-    <use href="./img/minus#minus.svg"></use>
-  </svg>
-</div>`);
+   <svg class="svg-minus" width="16" height="16">
+    <use href="./img/plus.svg#plus" ></use>
+  </svg>`);const c=document.querySelector(".container-svg");document.querySelector(".svg-plus");document.querySelector(".svg-minus");c.addEventListener("click",o=>{o.target.closest(".svg-plus")?e.value=Number(e.value)+1:o.target.closest(".svg-minus")&&e.value>0&&(e.value=Number(e.value)-1)});const u=document.querySelector(".form");u.addEventListener("submit",m);function m(o){o.preventDefault();const l=document.querySelector('input[name="state"]:checked'),s=Number(e.value);new Promise((i,a)=>{setTimeout(()=>{l.value=="fulfilled"?i(`✅ Fulfilled promise in ${s}ms`):a(`❌ Rejected promise in ${s}ms`)},s)}).then(i=>{t.show({title:"OK!",message:`Fulfilled promise in ${s}ms`,iconUrl:"../img/bi-check.svg",position:"topRight",backgroundColor:"#59a10d",titleColor:"#fff",messageColor:"#fff",progressBarColor:"#326101",class:"iziToast-dark"})}).catch(i=>{t.show({title:"Error!",message:"Illegal operation",iconUrl:"../img/x.svg",position:"topRight",backgroundColor:"#ef4040",titleColor:"#fff",messageColor:"#fff",progressBarColor:"#326101",class:"iziToast-dark"})})}const g=document.querySelector("button");g.addEventListener("click",o=>{const l=document.querySelector('input[name="state"]:checked');(!e.value||!l)&&t.show({title:"Caution!",message:"You forgot important data",iconUrl:"../img/bi_exclamation-triangle.svg",position:"topRight",backgroundColor:"#ffa000",titleColor:"#fff",messageColor:"#fff",progressBarColor:"#bb7b10",class:"iziToast-dark"})});t.show({title:"Hello!",message:"Welcome!",iconUrl:"../img/bi_bell.svg",position:"topRight",backgroundColor:"#09f",titleColor:"#fff",messageColor:"#fff",progressBarColor:"#0071bd",class:"iziToast-dark"});
 //# sourceMappingURL=2-snackbar.js.map
