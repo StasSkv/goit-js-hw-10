@@ -1,29 +1,36 @@
-
-
 .home {
-height: 100vh;
+  height: 100vh;
+  padding: 20px 50px;
+  text-align: center;
 }
 
 .home-title {
-text-transform: uppercase;
-color: blue;
+  text-transform: uppercase;
+  font-size: 50px;
+  color: rgb(41, 177, 198);
 }
 
 .home-list {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 20px;
-
-}
-.home-item {
-    width: 200px;
-    height: 200px;
-    background-color: rebeccapurple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .home-link {
-    display: block;
-    min-width: 100%;
-   min-height: 100%;
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.link-back-to-home {
+  width: 100px;
+  padding: 10px;
+  background-color: rgb(41, 177, 198);
+  border-radius: 10px;
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }

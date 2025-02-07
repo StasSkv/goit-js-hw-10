@@ -4,6 +4,13 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+const main = document.querySelector('main');
+
+main.insertAdjacentHTML(
+  'beforebegin',
+  `<a href="./index.html" class="link-back-to-home">go home</a>`
+);
+
 const input = document.querySelector('#datetime-picker');
 input.classList.add('input');
 
@@ -45,7 +52,7 @@ const options = {
         title: 'Hey!',
         message: 'Please choose a date in the future',
         iconUrl: '../img/x.svg',
-        position: 'center',
+        position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',
         messageColor: '#fff',
