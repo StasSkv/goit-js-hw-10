@@ -1,8 +1,11 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import biExclTri from '../img/bi_exclamation-triangle.svg';
+import biBell from '../img/bi_bell.svg';
+import plusIcon from '../img/plus.svg';
+import minusIcon from '../img/plus.svg';
 
 const main = document.querySelector('main');
-
 main.insertAdjacentHTML(
   'beforebegin',
   `<a href="./index.html" class="link-back-to-home">go home</a>`
@@ -12,8 +15,6 @@ const inputDelay = document.querySelector('input');
 const labelDelay = inputDelay.closest('label');
 inputDelay.classList.add('input-delay');
 labelDelay.classList.add('label-delay');
-import plusIcon from '../img/plus.svg';
-import minusIcon from '../img/plus.svg';
 
 labelDelay.insertAdjacentHTML(
   'beforeend',
@@ -24,8 +25,6 @@ labelDelay.insertAdjacentHTML(
 );
 
 const containerSvg = document.querySelector('.container-svg');
-const btnPlusPoint = document.querySelector('.svg-plus');
-const btnMinusPoint = document.querySelector('.svg-minus');
 
 containerSvg.addEventListener('click', event => {
   if (event.target.closest('.svg-plus')) {
@@ -36,8 +35,6 @@ containerSvg.addEventListener('click', event => {
 });
 
 const form = document.querySelector('.form');
-import biCheck from '../img/bi-check.svg';
-import x from '../img/x.svg';
 
 form.addEventListener('submit', formSubmit);
 
@@ -46,7 +43,6 @@ function formSubmit(event) {
   const selectedRadio = document.querySelector('input[name="state"]:checked');
 
   const delay = Number(inputDelay.value);
-
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (selectedRadio.value == 'fulfilled') {
@@ -60,9 +56,7 @@ function formSubmit(event) {
   promise
     .then(result => {
       iziToast.show({
-        title: 'OK!',
-        message: `Fulfilled promise in ${delay}ms`,
-        iconUrl: biCheck,
+        message: `✅ Fulfilled promise in ${delay}ms`,
         position: 'topRight',
         backgroundColor: '#59a10d',
         titleColor: '#fff',
@@ -75,9 +69,7 @@ function formSubmit(event) {
     })
     .catch(error => {
       iziToast.show({
-        title: 'Error!',
-        message: 'Illegal operation',
-        iconUrl: x,
+        message: `❌ Rejected promise in ${delay}ms`,
         position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',
@@ -88,11 +80,10 @@ function formSubmit(event) {
         transitionOut: 'fadeOutUp',
       });
     });
+  form.reset();
 }
 
 const btnForm = document.querySelector('button');
-import biExclTri from '../img/bi_exclamation-triangle.svg';
-import biBell from '../img/bi_bell.svg';
 
 btnForm.addEventListener('click', event => {
   const selectedRadio = document.querySelector('input[name="state"]:checked');
