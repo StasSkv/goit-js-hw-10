@@ -17,10 +17,10 @@ labelDelay.insertAdjacentHTML(
   'beforeend',
   `<div class="container-svg">
   <svg class="svg-plus" width="16" height="16">
-    <use href="/img/plus.svg#plus"></use>
+    <use href="../img/public/plus.svg#plus"></use>
   </svg>
    <svg class="svg-minus" width="16" height="16">
-    <use href="/img/plus.svg#plus" ></use>
+    <use href="../img/public/plus.svg#plus" ></use>
   </svg>`
 );
 
@@ -37,6 +37,8 @@ containerSvg.addEventListener('click', event => {
 });
 
 const form = document.querySelector('.form');
+
+import biCheck from '../img/public/bi-check.svg';
 
 form.addEventListener('submit', formSubmit);
 
@@ -61,7 +63,7 @@ function formSubmit(event) {
       iziToast.show({
         title: 'OK!',
         message: `Fulfilled promise in ${delay}ms`,
-        iconUrl: '/src/img/bi-check.svg',
+        iconUrl: 'biCheck',
         position: 'topRight',
         backgroundColor: '#59a10d',
         titleColor: '#fff',
