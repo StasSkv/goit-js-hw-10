@@ -22,6 +22,12 @@
   display: block;
   min-width: 100%;
   min-height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.home-link:hover,
+.home-link:focus {
+  transform: scale(1.1);
 }
 
 .link-back-to-home {
@@ -33,4 +39,12 @@
   position: absolute;
   top: 20px;
   left: 20px;
+    transition: transform 0.3s ease-in-out;
 }
+
+.link-back-to-home:hover,
+.link-back-to-home:focus {
+  transform: scale(1.1);
+}
+
+
