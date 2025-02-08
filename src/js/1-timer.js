@@ -51,7 +51,7 @@ const options = {
       iziToast.show({
         title: 'Hey!',
         message: 'Please choose a date in the future',
-        iconUrl: '../img/x.svg',
+        iconUrl: '/src/img/x.svg',
         position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',
