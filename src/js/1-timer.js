@@ -23,6 +23,7 @@ btn.classList.add('btn');
 btn.disabled = true;
 let userSelectedDate;
 let dateNow;
+import x from '../img/x.svg';
 
 
 const options = {
@@ -52,7 +53,7 @@ const options = {
       iziToast.show({
         title: 'Hey!',
         message: 'Please choose a date in the future',
-        iconUrl: '/img/x.svg',
+        iconUrl: x,
         position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',

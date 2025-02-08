@@ -12,15 +12,16 @@ const inputDelay = document.querySelector('input');
 const labelDelay = inputDelay.closest('label');
 inputDelay.classList.add('input-delay');
 labelDelay.classList.add('label-delay');
+import plusIcon from '../img/plus.svg';
 
 labelDelay.insertAdjacentHTML(
   'beforeend',
   `<div class="container-svg">
   <svg class="svg-plus" width="16" height="16">
-    <use href="/img/plus.svg#plus"></use>
+    <use href=${plusIcon}></use>
   </svg>
   <svg class="svg-minus" width="16" height="16">
-    <use href="/img/plus.svg#plus"></use>
+    <use href=${plusIcon}></use>
   </svg>
 </div>
 `
@@ -39,7 +40,8 @@ containerSvg.addEventListener('click', event => {
 });
 
 const form = document.querySelector('.form');
-import plusIcon from '../img/bi_exclamation-triangle.svg';
+import biCheck from '../img/bi-check.svg';
+import x from '../img/x.svg';
 
 form.addEventListener('submit', formSubmit);
 
@@ -64,7 +66,7 @@ function formSubmit(event) {
       iziToast.show({
         title: 'OK!',
         message: `Fulfilled promise in ${delay}ms`,
-        iconUrl: plusIcon,
+        iconUrl: biCheck,
         position: 'topRight',
         backgroundColor: '#59a10d',
         titleColor: '#fff',
@@ -78,7 +80,7 @@ function formSubmit(event) {
       iziToast.show({
         title: 'Error!',
         message: 'Illegal operation',
-        iconUrl: '/img/bi_exclamation-triangle.svg',
+        iconUrl: x,
         position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',
@@ -90,6 +92,8 @@ function formSubmit(event) {
 }
 
 const btnForm = document.querySelector('button');
+import biExclTri from '../img/bi_exclamation-triangle.svg';
+import biBell from '../img/bi_bell.svg';
 
 btnForm.addEventListener('click', event => {
   const selectedRadio = document.querySelector('input[name="state"]:checked');
@@ -97,7 +101,7 @@ btnForm.addEventListener('click', event => {
     iziToast.show({
       title: 'Caution!',
       message: 'You forgot important data',
-      iconUrl: '/img/bi-check.svg',
+      iconUrl: biExclTri,
       position: 'topRight',
       backgroundColor: '#ffa000',
       titleColor: '#fff',
@@ -111,7 +115,7 @@ btnForm.addEventListener('click', event => {
 iziToast.show({
   title: 'Hello!',
   message: 'Welcome!',
-  iconUrl: '/img/bi_bell.svg',
+  iconUrl: biBell,
   position: 'topRight',
   backgroundColor: '#09f',
   titleColor: '#fff',
