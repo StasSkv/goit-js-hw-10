@@ -25,7 +25,6 @@ let userSelectedDate;
 let dateNow;
 import x from '../img/x.svg';
 
-
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -62,6 +61,8 @@ const options = {
         progressBarColor: '#b51b1b',
         closeColor: '#fff',
         class: 'iziToast-dark',
+        displayMode: 2,
+        transitionOut: 'fadeOutUp',
       });
       btn.disabled = true;
       btn.classList.remove('btn-active');

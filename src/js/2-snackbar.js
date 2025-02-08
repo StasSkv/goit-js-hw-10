@@ -13,18 +13,14 @@ const labelDelay = inputDelay.closest('label');
 inputDelay.classList.add('input-delay');
 labelDelay.classList.add('label-delay');
 import plusIcon from '../img/plus.svg';
+import minusIcon from '../img/plus.svg';
 
 labelDelay.insertAdjacentHTML(
   'beforeend',
   `<div class="container-svg">
-  <svg class="svg-plus" width="16" height="16">
-    <use href=${plusIcon}></use>
-  </svg>
-  <svg class="svg-minus" width="16" height="16">
-    <use href=${plusIcon}></use>
-  </svg>
-</div>
-`
+    <img class="svg-plus" src="${plusIcon}" width="16" height="16" />
+    <img class="svg-minus" src="${minusIcon}" width="16" height="16" />
+  </div>`
 );
 
 const containerSvg = document.querySelector('.container-svg');
@@ -73,7 +69,8 @@ function formSubmit(event) {
         messageColor: '#fff',
         progressBarColor: '#326101',
         class: 'iziToast-dark',
-        displayMode: 'replace',
+        displayMode: 2,
+        transitionOut: 'fadeOutUp',
       });
     })
     .catch(error => {
@@ -87,6 +84,8 @@ function formSubmit(event) {
         messageColor: '#fff',
         progressBarColor: '#b51b1b',
         class: 'iziToast-dark',
+        displayMode: 2,
+        transitionOut: 'fadeOutUp',
       });
     });
 }
@@ -108,6 +107,8 @@ btnForm.addEventListener('click', event => {
       messageColor: '#fff',
       progressBarColor: '#bb7b10',
       class: 'iziToast-dark',
+      displayMode: 2,
+      transitionOut: 'fadeOutUp',
     });
   }
 });
@@ -122,4 +123,6 @@ iziToast.show({
   messageColor: '#fff',
   progressBarColor: '#0071bd',
   class: 'iziToast-dark',
+  displayMode: 2,
+  transitionOut: 'fadeOutUp',
 });
