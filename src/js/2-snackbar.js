@@ -17,10 +17,10 @@ labelDelay.insertAdjacentHTML(
   'beforeend',
   `<div class="container-svg">
   <svg class="svg-plus" width="16" height="16">
-    <use href="../img/public/plus.svg#plus"></use>
+    <use href="../img/public/plus.svg"></use>
   </svg>
    <svg class="svg-minus" width="16" height="16">
-    <use href="../img/public/plus.svg#plus" ></use>
+    <use href="../img/public/plus.svg" ></use>
   </svg>`
 );
 
@@ -70,13 +70,14 @@ function formSubmit(event) {
         messageColor: '#fff',
         progressBarColor: '#326101',
         class: 'iziToast-dark',
+        displayMode: 'replace',
       });
     })
     .catch(error => {
       iziToast.show({
         title: 'Error!',
         message: 'Illegal operation',
-        iconUrl: '/src/img/x.svg',
+        iconUrl: '/src/img//public',
         position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',
