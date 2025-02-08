@@ -17,10 +17,10 @@ labelDelay.insertAdjacentHTML(
   'beforeend',
   `<div class="container-svg">
   <svg class="svg-plus" width="16" height="16">
-    <use href="./img/plus.svg#plus"></use>
+    <use href="/img/plus.svg#plus"></use>
   </svg>
    <svg class="svg-minus" width="16" height="16">
-    <use href="./img/plus.svg#plus"></use>
+    <use href="/img/plus.svg#plus"></use>
   </svg>`
 );
 
@@ -62,7 +62,7 @@ function formSubmit(event) {
       iziToast.show({
         title: 'OK!',
         message: `Fulfilled promise in ${delay}ms`,
-        iconUrl: '../img/bi_exclamation-triangle.svg',
+        iconUrl: '/img/bi_exclamation-triangle.svg',
         position: 'topRight',
         backgroundColor: '#59a10d',
         titleColor: '#fff',
@@ -76,7 +76,7 @@ function formSubmit(event) {
       iziToast.show({
         title: 'Error!',
         message: 'Illegal operation',
-        iconUrl: '../img/bi_exclamation-triangle.svg',
+        iconUrl: '/img/bi_exclamation-triangle.svg',
         position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',
@@ -95,7 +95,7 @@ btnForm.addEventListener('click', event => {
     iziToast.show({
       title: 'Caution!',
       message: 'You forgot important data',
-      iconUrl: '../img/bi-check.svg',
+      iconUrl: '/img/bi-check.svg',
       position: 'topRight',
       backgroundColor: '#ffa000',
       titleColor: '#fff',
@@ -109,7 +109,7 @@ btnForm.addEventListener('click', event => {
 iziToast.show({
   title: 'Hello!',
   message: 'Welcome!',
-  iconUrl: '../img/bi_bell.svg',
+  iconUrl: '/img/bi_bell.svg',
   position: 'topRight',
   backgroundColor: '#09f',
   titleColor: '#fff',
