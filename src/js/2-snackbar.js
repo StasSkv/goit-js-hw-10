@@ -19,9 +19,11 @@ labelDelay.insertAdjacentHTML(
   <svg class="svg-plus" width="16" height="16">
     <use href="/img/plus.svg#plus"></use>
   </svg>
-   <svg class="svg-minus" width="16" height="16">
+  <svg class="svg-minus" width="16" height="16">
     <use href="/img/plus.svg#plus"></use>
-  </svg>`
+  </svg>
+</div>
+`
 );
 
 const containerSvg = document.querySelector('.container-svg');
@@ -37,7 +39,7 @@ containerSvg.addEventListener('click', event => {
 });
 
 const form = document.querySelector('.form');
-
+import plusIcon from '../img/bi_exclamation-triangle.svg';
 
 form.addEventListener('submit', formSubmit);
 
@@ -62,7 +64,7 @@ function formSubmit(event) {
       iziToast.show({
         title: 'OK!',
         message: `Fulfilled promise in ${delay}ms`,
-        iconUrl: '/img/bi_exclamation-triangle.svg',
+        iconUrl: plusIcon,
         position: 'topRight',
         backgroundColor: '#59a10d',
         titleColor: '#fff',

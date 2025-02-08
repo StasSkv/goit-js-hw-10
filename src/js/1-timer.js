@@ -24,6 +24,7 @@ btn.disabled = true;
 let userSelectedDate;
 let dateNow;
 
+
 const options = {
   enableTime: true,
   time_24hr: true,
