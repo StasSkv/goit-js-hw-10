@@ -41,6 +41,22 @@ form.addEventListener('submit', formSubmit);
 function formSubmit(event) {
   event.preventDefault();
   const selectedRadio = document.querySelector('input[name="state"]:checked');
+  if (!selectedRadio) {
+    iziToast.show({
+      title: 'Caution!',
+      message: 'You forgot important data',
+      iconUrl: biExclTri,
+      position: 'topRight',
+      backgroundColor: '#ffa000',
+      titleColor: '#fff',
+      messageColor: '#fff',
+      progressBarColor: '#bb7b10',
+      class: 'iziToast-dark',
+      displayMode: 2,
+      transitionOut: 'fadeOutUp',
+    });
+    return;
+  }
 
   const delay = Number(inputDelay.value);
   const promise = new Promise((resolve, reject) => {
@@ -56,7 +72,7 @@ function formSubmit(event) {
   promise
     .then(result => {
       iziToast.show({
-        message: `✅ Fulfilled promise in ${delay}ms`,
+        message: result, // Динамічне значення з resolve
         position: 'topRight',
         backgroundColor: '#59a10d',
         titleColor: '#fff',
@@ -69,7 +85,7 @@ function formSubmit(event) {
     })
     .catch(error => {
       iziToast.show({
-        message: `❌ Rejected promise in ${delay}ms`,
+        message: error, // Динамічне значення з reject
         position: 'topRight',
         backgroundColor: '#ef4040',
         titleColor: '#fff',
@@ -80,29 +96,9 @@ function formSubmit(event) {
         transitionOut: 'fadeOutUp',
       });
     });
+
   form.reset();
 }
-
-const btnForm = document.querySelector('button');
-
-btnForm.addEventListener('click', event => {
-  const selectedRadio = document.querySelector('input[name="state"]:checked');
-  if (!inputDelay.value || !selectedRadio) {
-    iziToast.show({
-      title: 'Caution!',
-      message: 'You forgot important data',
-      iconUrl: biExclTri,
-      position: 'topRight',
-      backgroundColor: '#ffa000',
-      titleColor: '#fff',
-      messageColor: '#fff',
-      progressBarColor: '#bb7b10',
-      class: 'iziToast-dark',
-      displayMode: 2,
-      transitionOut: 'fadeOutUp',
-    });
-  }
-});
 
 iziToast.show({
   title: 'Hello!',
